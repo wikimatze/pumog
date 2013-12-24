@@ -1,8 +1,9 @@
-task :spec do
-  Dir.glob("spec/**/*_spec.rb") do |spec|
-    system("rspec #{spec}")
-  end
+require 'rake'
+require 'rspec/core/rake_task'
+
+desc "Run all tests"
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.ruby_opts = %w[-w]
 end
 
 task :default => :spec
-
