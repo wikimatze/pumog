@@ -1,10 +1,21 @@
 require 'spec_helper.rb'
 
+
 describe Commandline do
-  context "questions" do
-    xit "asks for the name of the author"
-    xit "asks for the email adress of the author"
-    xit "asks after the module name"
+  context "basic information" do
+    it "capture the name of the author" do
+      out = capture_io{ Commandline.start ['author', 'Matze']}.join ''
+      expect(out).to match(/The name of the module author is Matze/)
+    end
+
+    it "capture the email adress of the author" do
+      out = capture_io{ Commandline.start ['email_adress', 'matthias@wikimatze.de'] }.join ''
+      expect(out).to match(/The email adress of the module author is matthias@wikimatze.de/) end
+
+    it "capture after the module name" do
+      out = capture_io{ Commandline.start ['module_name', 'ruby'] }.join ''
+      expect(out).to match(/The name of the module is ruby/)
+    end
   end
 
   context "confirmation" do
