@@ -13,23 +13,23 @@ class Commandline < Thor
   def start
     module_name = ''
     while module_name.empty?
-      say "What is the name of the module?"
+      say "What is the name of the module?", :green
       module_name = STDIN.gets.chop
-      say Messages.module_name(module_name)
+      say Messages.module_name(module_name), :red
     end
 
     author = ''
     while author.empty?
-      say "What is the name of the author?"
+      say "What is the name of the author?", :green
       author = STDIN.gets.chop
-      say Messages.author_name(author)
+      say Messages.author_name(author), :red
     end
 
     email = ''
     while email.empty?
-      say "What is the email adress of the author?"
+      say "What is the email adress of the author?", :green
       email = STDIN.gets.chop
-      say Messages.email_adress(email)
+      say Messages.email_adress(email), :red
     end
 
     module_information = ModuleInformation.new(module_name, author, email)
@@ -38,9 +38,9 @@ class Commandline < Thor
 
   private
   def confirm(data)
-    say Messages.confirm_module_name(data.module_name.downcase)
-    say Messages.confirm_creator(data)
-    say Messages.confirm
+    say Messages.confirm_module_name(data.module_name.downcase), :blue
+    say Messages.confirm_creator(data), :yellow
+    say Messages.confirm, :yellow
 
     confirm = STDIN.gets.chop
 
@@ -73,4 +73,5 @@ class Commandline < Thor
 
     exit
   end
+
 end
