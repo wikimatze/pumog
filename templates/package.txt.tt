@@ -1,0 +1,9 @@
+# === Author
+#
+# * <%= @author%> <<%= @email %>>
+#
+class <%= @module_name %>::package {
+  package { '<package-name>':
+    ensure => latest,
+  }
+}

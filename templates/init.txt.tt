@@ -1,0 +1,7 @@
+# === Author
+#
+# * <%= @author%> <<%= @email %>>
+#
+class <%= @module_name %>::init {
+  include <%= @module_name %>::package
+}
