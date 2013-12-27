@@ -1,5 +1,6 @@
 require 'thor'
-
+require 'messages'
+require 'module_information'
 
 class Commandline < Thor
   include Thor::Actions
@@ -32,10 +33,24 @@ class Commandline < Thor
     end
 
     module_information = ModuleInformation.new(module_name, author, email)
-    create_files(module_information)
+    confirm(module_information)
   end
 
   private
+  def confirm(data)
+    say Messages.confirm_module_name(data.module_name.downcase)
+    say Messages.confirm_creator(data)
+    say Messages.confirm
+
+    confirm = STDIN.gets.chop
+
+    while confirm.empty? | confirm.include?('n')
+      start
+    end
+
+    create_files(data)
+  end
+
   def create_files(data)
     manifests_directory_name = "manifests_tmp"
 
@@ -55,5 +70,7 @@ class Commandline < Thor
       "package.txt.tt",
       "#{manifests_directory_name}/package.pp"
     )
+
+    exit
   end
 end
