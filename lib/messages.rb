@@ -1,14 +1,14 @@
 class Messages
-  def self.module_name(name)
-    return "Module name can't be blank!" unless !name.empty?
+  def self.module_name_error(name)
+    "Module name can't be blank!" unless !name.empty?
   end
 
-  def self.author_name(author)
-    return "Author name can't be blank!" unless !author.empty?
+  def self.author_name_error(author)
+    "Author name can't be blank!" unless !author.empty?
   end
 
-  def self.email_adress(email)
-    return "Email adress can't be blank!" unless !email.empty?
+  def self.email_adress_error(email)
+    "Email adress can't be blank!" unless !email.empty?
   end
 
   def self.confirm_module_name(name)
