@@ -1,3 +1,5 @@
+$:.push(File.join(File.dirname(__FILE__), '..', 'lib'))
+
 require 'rake'
 require 'rspec/core/rake_task'
 

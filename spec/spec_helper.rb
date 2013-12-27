@@ -1,7 +1,9 @@
-require 'minitest/unit'
-require File.expand_path(File.dirname(__FILE__) + "/../commandline.rb")
-require File.expand_path(File.dirname(__FILE__) + "/../module_information.rb")
+$:.push(File.join(File.dirname(__FILE__), '..', 'lib'))
 
+require 'minitest/unit'
+
+require 'commandline'
+require 'module_information'
 
 RSpec.configure do |conf|
   conf.color_enabled = true

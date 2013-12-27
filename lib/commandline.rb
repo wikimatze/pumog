@@ -1,8 +1,6 @@
 require 'thor'
 
 class Commandline < Thor
-
-
   desc "start NAME", "the name of the author"
   def author(name)
     return error "Author name can't be blank!" unless !name.empty?
@@ -32,17 +30,5 @@ class Commandline < Thor
   def self.confirm_(module_name)
     home = Dir.home
     puts "New module will be created in: #{home}/#{module_name}"
-  end
-
-  def self.author
-    @author
-  end
-
-  def self.email_adress
-    @email_adress
-  end
-
-  def self.module_name
-    @module_name
   end
 end
