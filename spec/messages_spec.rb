@@ -14,7 +14,7 @@ describe Messages do
         module_information.module_name= ''
 
         message = Messages.module_name(module_information.module_name)
-        expect(message).to match /Module name can't be blank!/
+        expect(message).to match(/Module name can't be blank!/)
       end
     end
 
@@ -28,7 +28,7 @@ describe Messages do
         module_information.author = ''
 
         message = Messages.author_name(module_information.author)
-        expect(message).to match /Author name can't be blank!/
+        expect(message).to match(/Author name can't be blank!/)
       end
     end
 
@@ -42,7 +42,7 @@ describe Messages do
         module_information.email= ''
 
         message = Messages.email_adress(module_information.email)
-        expect(message).to match /Email adress can't be blank!/
+        expect(message).to match (/Email adress can't be blank!/)
       end
     end
   end
