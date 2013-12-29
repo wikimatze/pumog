@@ -1,8 +1,9 @@
-# === Author
+<% if @nodoc -%># === Author
 #
 # * <%= @author%> <<%= @email %>>
 #
-class <%= @module_name %>::package {
+#
+<% end %>class <%= @module_name %>::package {
   package { '<package-name>':
     ensure => latest,
   }

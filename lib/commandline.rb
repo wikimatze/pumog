@@ -10,7 +10,10 @@ class Commandline < Thor
   end
 
   desc "start", "sear something in a pan"
+  method_option :nodoc, :type => :boolean, :desc => 'create new puppet module without documentation', :default => false
   def start
+    @nodoc= options[:nodoc] ? false : true
+
     module_name = ''
     while module_name.empty?
       say "What is the name of the module?", :green
@@ -23,14 +26,14 @@ class Commandline < Thor
       say "What is the name of the author?", :green
       author = STDIN.gets.chop
       say Messages.author_name_error(author), :red
-    end
+    end unless !@nodoc
 
     email = ''
     while email.empty?
       say "What is the email adress of the author?", :green
       email = STDIN.gets.chop
       say Messages.email_adress_error(email), :red
-    end
+    end unless !@nodoc
 
     module_information = ModuleInformation.new(module_name, author, email)
     confirm(module_information)
