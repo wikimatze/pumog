@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "pumog/commandline"
+
+Pumog::Commandline.start
