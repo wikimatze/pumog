@@ -58,8 +58,8 @@ module Pumog
     def create_files(data)
       manifests_directory_name = data.name
 
-      empty_directory "files_tmp"
-      empty_directory "templates_tmp"
+      empty_directory data.name + "/files"
+      empty_directory data.name + "/templates"
       empty_directory manifests_directory_name
 
       @name = data.name.downcase
