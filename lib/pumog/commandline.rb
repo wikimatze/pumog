@@ -1,5 +1,4 @@
 require 'thor'
-require 'pumog'
 
 module Pumog
   class Commandline < Thor
