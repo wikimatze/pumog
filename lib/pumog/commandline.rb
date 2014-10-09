@@ -1,4 +1,6 @@
 require 'thor'
+require 'pumog/messages'
+require 'pumog/module_information'
 
 module Pumog
   class Commandline < Thor
@@ -13,11 +15,11 @@ module Pumog
     def start
       @nodoc= options[:nodoc] ? false : true
 
-      module_name = ''
-      while module_name.empty?
+      name = ''
+      while name.empty?
         say "What is the name of the module?", :green
-        module_name = STDIN.gets.chop
-        say Pumog::Messages.module_name_error(module_name), :red
+        name = STDIN.gets.chop
+        say Pumog::Messages.module_name_error(name), :red
       end
 
       author = ''
@@ -34,13 +36,13 @@ module Pumog
         say Pumog::Messages.email_adress_error(email), :red
       end unless !@nodoc
 
-      module_information = Pumog::ModuleInformation.new(module_name, author, email)
+      module_information = Pumog::ModuleInformation.new(name, author, email)
       confirm(module_information)
     end
 
     private
     def confirm(data)
-      say Pumog::Messages.confirm_module_name(data.module_name.downcase), :blue
+      say Pumog::Messages.confirm_module_name(data.name.downcase), :blue
       say Pumog::Messages.confirm_creator(data), :yellow
       say Pumog::Messages.confirm, :yellow
 
@@ -54,13 +56,13 @@ module Pumog
     end
 
     def create_files(data)
-      manifests_directory_name = "manifests_tmp"
+      manifests_directory_name = data.name
 
       empty_directory "files_tmp"
       empty_directory "templates_tmp"
       empty_directory manifests_directory_name
 
-      @module_name = data.module_name.downcase
+      @name = data.name.downcase
       @author = data.author
       @email = data.email
       template(
@@ -72,7 +74,6 @@ module Pumog
         "package.txt.tt",
         "#{manifests_directory_name}/package.pp"
       )
-
       exit
     end
   end

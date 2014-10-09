@@ -4,16 +4,16 @@ describe Pumog::Messages do
   context "basic information" do
     let(:module_information) {Pumog::ModuleInformation.new("Ruby", "Matze", "matthias@wikimatze.de")}
 
-    context "#module_name" do
-      it "print error message if module_name is blank" do
-        module_information.module_name= ''
+    context "#name" do
+      it "print error message if name is blank" do
+        module_information.name= ''
 
-        message = Pumog::Messages.module_name_error(module_information.module_name)
+        message = Pumog::Messages.module_name_error(module_information.name)
         expect(message).to match(/Module name can't be blank!/)
       end
 
       it "print nothing" do
-        message = Pumog::Messages.module_name_error(module_information.module_name)
+        message = Pumog::Messages.module_name_error(module_information.name)
         expect(message).to be_nil
       end
     end
@@ -50,8 +50,8 @@ describe Pumog::Messages do
   context "#confirmation" do
     let(:module_information) {Pumog::ModuleInformation.new("Ruby", "M", "m@test.de")}
     it "print the path of the generated module" do
-      message = Pumog::Messages.confirm_module_name(module_information.module_name)
-      expect(message).to eql("New module will be created in:\n#{Dir.home}/#{module_information.module_name}")
+      message = Pumog::Messages.confirm_module_name(module_information.name)
+      expect(message).to eql("New module will be created in:\n#{Dir.home}/#{module_information.name}")
     end
 
     it "print the creator information" do

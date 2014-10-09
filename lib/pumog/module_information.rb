@@ -1,9 +1,9 @@
 module Pumog
   class ModuleInformation
-    attr_accessor :module_name, :author, :email
+    attr_accessor :name, :author, :email
 
-    def initialize(module_name= '', author = '', email= '')
-      @module_name = module_name
+    def initialize(name= '', author = '', email= '')
+      @name = name
       @author = author
       @email = email
     end
