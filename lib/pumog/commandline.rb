@@ -10,7 +10,7 @@ module Pumog
       'templates'
     end
 
-    desc "start", "sear something in a pan"
+    desc "start", "create a new puppet module."
     method_option :nodoc, :type => :boolean, :desc => 'create new puppet module without documentation', :default => false
     def start
       @nodoc= options[:nodoc] ? false : true
