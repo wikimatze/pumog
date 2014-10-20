@@ -17,8 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_development_dependency "minitest"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "rake"
-  s.add_runtime_dependency "thor"
+  s.add_development_dependency "rspec", "~> 3.1"
+  s.add_development_dependency "rake", "~> 10.3"
+  s.add_runtime_dependency "thor", "~>0.19"
 end
