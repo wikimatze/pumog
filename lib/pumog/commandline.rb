@@ -7,7 +7,7 @@ module Pumog
     include Thor::Actions
 
     def self.source_root
-      'templates'
+      File.expand_path('../templates', File.dirname(__FILE__))
     end
 
     desc "start", "create a new puppet module."
