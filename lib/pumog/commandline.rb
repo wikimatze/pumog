@@ -10,8 +10,9 @@ module Pumog
       File.expand_path('../templates', File.dirname(__FILE__))
     end
 
-    desc "start", "create a new puppet module."
-    method_option :nodoc, :type => :boolean, :desc => 'create new puppet module without documentation', :default => false
+    desc "start\n\n", "creates a new puppet module"
+    class_option :nodoc, :desc => 'no documentation', :aliases => '-n', :default => false, :type => :boolean
+
     def start
       @nodoc= options[:nodoc] ? false : true
 
