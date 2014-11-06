@@ -3,7 +3,7 @@
 # * <%= @author%> <<%= @email %>>
 #
 #
-<% end %>class <%= @module_name %>::package {
+<% end %>class <%= @name %>::package {
   package { '<package-name>':
     ensure => latest,
   }

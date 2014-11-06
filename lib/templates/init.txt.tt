@@ -3,6 +3,6 @@
 # * <%= @author%> <<%= @email %>>
 #
 #
-<% end %>class <%= @module_name %>::init {
-  include <%= @module_name %>::package
+<% end %>class <%= @name %>::init {
+  include <%= @name %>::package
 }
