@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email       = ["matthias@wikimatze.de"]
   s.license     = 'MIT'
   s.homepage    = "https://github.com/matthias-guenther/pumog"
-  s.summary     = %q{Create new puppet modules with this templates}
+  s.summary     = %q{Create new puppet module with this template.}
   s.description = %q{Generate a basic structure for new puppet modules with or without documentation.}
 
   s.files         = `git ls-files`.split("\n")
