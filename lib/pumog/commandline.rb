@@ -44,13 +44,15 @@ module Pumog
     private
     def confirm(data)
       say Pumog::Messages.confirm_module_name(data.name.downcase), :blue
-      say Pumog::Messages.confirm_creator(data), :yellow
-      say Pumog::Messages.confirm, :yellow
 
-      confirm = STDIN.gets.chop
+      if @nodoc
+        say Pumog::Messages.confirm_creator(data), :yellow
+        say Pumog::Messages.confirm, :yellow
+        confirm = STDIN.gets.chop
 
-      while confirm.empty? | confirm.include?('n')
-        start
+        while confirm.empty? | confirm.include?('n')
+          start
+        end
       end
 
       create_files(data)
