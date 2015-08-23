@@ -57,7 +57,7 @@ module Pumog
     end
 
     def create_files(data)
-      manifests_directory_name = data.name
+      manifests_directory_name = data.name + "/manifests"
 
       empty_directory data.name + "/files"
       empty_directory data.name + "/templates"
