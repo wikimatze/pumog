@@ -3,18 +3,49 @@
 Stands for **PuppetModuleGenerator** and can be used to generate a basic structure for new puppet modules with or without documentation.
 
 
-## Usage
+## Usage & Examples
 
 Run `pumog start` and it will generate the following directory structure:
 
+    What is the name of the module?
+    test
 
-      create  <module-name>/files
-      create  <module-name>/templates
-       exist  <module-name>
-      create  <module-name>/init.pp
-      create  <module-name>/package.pp
+    What is the name of the author?
+    Matthias
+
+    What is the email adress of the author?
+    matthias@wikimatze.de
+
+    New module will be created in:
+    /home/wm/test
+
+    Author/creator of the new module:
+    Matthias <matthias@wikimatze.de>
+
+    Is this correct? [y|n]:
+
+    create  test/files
+    create  test/templates
+    create  test/manifests
+    create  test/manifests/init.pp
+    create  test/manifests/package.pp
 
 
 If you pass in the `--no-doc` option, you will not asked after the author name and the email (leaving the module without
 documentation).
+
+
+## Commands & Options
+
+Commands:
+
+
+    pumog help [COMMAND]  # Describe available commands or one specific command
+    pumog start           # creates a new puppet module
+
+
+Options:
+
+
+    -n, [--nodoc], [--no-nodoc]  # no documentation
 
