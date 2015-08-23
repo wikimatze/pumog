@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pumog (1.1.0)
+    pumog (1.2.0)
       thor (~> 0.19)
 
 GEM
@@ -30,7 +30,7 @@ PLATFORMS
 DEPENDENCIES
   pumog!
   rake (~> 10.3)
-  rspec (~> 3.1)
+  rspec (~> 3.3)
 
 BUNDLED WITH
    1.10.6
