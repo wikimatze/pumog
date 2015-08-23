@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Matthias Guenther"]
   s.email       = ["matthias@wikimatze.de"]
   s.license     = 'MIT'
-  s.homepage    = "https://github.com/matthias-guenther/pumog"
+  s.homepage    = "https://github.com/wikimatze/pumog"
   s.summary     = %q{Create new puppet module with this template.}
   s.description = %q{Generate a basic structure for new puppet modules with or without documentation.}
 
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_development_dependency "rspec", "~> 3.1"
+  s.add_development_dependency "rspec", "~> 3.3"
   s.add_development_dependency "rake", "~> 10.3"
   s.add_runtime_dependency "thor", "~>0.19"
 end
