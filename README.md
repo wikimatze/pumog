@@ -2,6 +2,9 @@
 
 Stands for **PuppetModuleGenerator** and can be used to generate a basic structure for new puppet modules with or without documentation.
 
+[![Gem Version](https://badge.fury.io/rb/pumog.svg)](http://badge.fury.io/rb/pumog)
+[![Build Status](https://travis-ci.org/wikimatze/pumog.svg?branch=master)](https://travis-ci.org/wikimatze/pumog)
+
 
 ## Usage & Examples
 
