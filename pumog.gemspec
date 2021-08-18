@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   s.add_development_dependency "rspec", "~> 3.3"
-  s.add_development_dependency "rake", "~> 10.3"
+  s.add_development_dependency "rake", "~> 13.0"
   s.add_runtime_dependency "thor", "~>0.19"
 end
