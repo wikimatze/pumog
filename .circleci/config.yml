@@ -4,8 +4,11 @@ orbs:
 
 jobs:
   build:
+    parameters:
+      ruby-version:
+        type: string
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: circleci/ruby:<< parameters.ruby-version >>
     executor: ruby/default
     steps:
       - checkout
@@ -16,3 +19,12 @@ jobs:
       - run:
           name: Run rspec tests
           command: bundle exec rake spec
+workflows:
+  build_and_test:
+    jobs:
+      - test:
+          matrix:
+            parameters:
+              # https://github.com/CircleCI-Public/cimg-ruby
+              # only supports the last three ruby versions
+              ruby-version: ["2.6.3"]
