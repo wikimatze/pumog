@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Which bundler?
           command: gem install bundler:2.2.26
-      - ruby/bundle-install
+      - bundle install
       - run:
           name: Run rspec tests
           command: bundle exec rake rspec
