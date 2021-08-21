@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@0.1.2 
+  ruby: circleci/ruby@0.1.2
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Which bundler?
-          command: bundle -v
+          command: gem install bundler:2.2.26
       - ruby/bundle-install
       - run:
           name: Run rspec tests
