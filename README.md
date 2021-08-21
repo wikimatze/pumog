@@ -3,6 +3,7 @@
 Stands for **PuppetModuleGenerator** and can be used to generate a basic structure for new puppet modules with or without documentation.
 
 [![Gem Version](https://badge.fury.io/rb/pumog.svg)](http://badge.fury.io/rb/pumog)
+[![CircleCI](https://circleci.com/gh/wikimatze/pumog.svg?style=svg)](https://app.circleci.com/pipelines/github/wikimatze/pumog)
 
 
 ## Usage & Examples
